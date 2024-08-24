@@ -28,7 +28,7 @@ export const PreviousInterviewList = () => {
   };
   return (
     <div>
-      <div className="grid grid-cols-4 gap-5 w-full">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5">
         {interviewList &&
           interviewList.map((interview: any, index: number) => (
             <InterviewItemCard 

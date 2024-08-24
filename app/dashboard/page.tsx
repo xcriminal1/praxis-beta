@@ -5,7 +5,7 @@ import { PreviousInterviewList } from "./_components/previous-interview-list";
 
 const DashboardPage = () => {
   return (
-    <div className="px-3 flex flex-col mt-7 gap-3 bg-gray-400">
+    <div className="px-3 flex flex-col mt-7 gap-3">
       <div className="flex flex-col gap-2">
         <h2 className="font-bold text-3xl capitalize text-center md:text-left">dashboard</h2>
         <h2 className="text-sm md:text-lg text-center md:text-left">
