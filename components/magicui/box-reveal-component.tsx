@@ -19,14 +19,13 @@ const BoxRevealDemo = () => {
   };
 
   return (
-    <div className="h-full w-full max-w-[38rem] flex flex-col items-center justify-center overflow-hidden pt-8">
+    <div className="h-full w-full max-w-[38rem] items-center justify-center overflow-hidden pt-8">
       <BoxReveal boxColor={"transparent"} duration={0.5}>
-        <div className="flex items-center justify-between gap-8 pt-4 py-2 pr-3">
-    
+        <div className="flex items-center justify-between gap-8 pt-4 pr-3">
           <h1
             className={cn(
               GeistMono.variable,
-              "font-mono text-3xl md:text-7xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#784fe0] to-[#000] bg-clip-text text-center md:text-left  leading-none tracking-tighter text-transparent select-none mb-3"
+              "font-mono text-3xl md:text-7xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#784fe0] to-[#000] bg-clip-text text-center  leading-none tracking-tighter text-transparent select-none mb-3"
             )}
           >
             Praxis AI
@@ -73,7 +72,7 @@ const BoxRevealDemo = () => {
       </BoxReveal>
 
       <BoxReveal boxColor={"#transparent"} duration={0.5}>
-        <h2 className="mt-[.5rem] text-[1.3rem] text-center md:text-left">
+        <h2 className="mt-[.5rem] text-[1.3rem]">
           Boost your{" "}
           <span className="text-[#784fe0]">
             interview skills and confidence 🚀
@@ -82,8 +81,8 @@ const BoxRevealDemo = () => {
       </BoxReveal>
 
       <BoxReveal boxColor={"#transparent"} duration={0.5}>
-        <div className="mt-[1.5rem] px-2">
-          <div className="flex flex-col items-center gap-2 text-center md:text-left">
+        <div className="mt-[1.5rem]">
+          <div className="flex flex-col items-left gap-2">
             <p>
               -&gt;
               <span className={cn(GeistMono.variable, "font-mono font-bold")}>
