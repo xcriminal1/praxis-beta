@@ -32,6 +32,9 @@ export const InterviewItemCard = ({ interview }: { interview: any }) => {
         <h2 className="text-sm text-gray-600">
           {interview?.jobExperience} Years of Experience
         </h2>
+        <h2 className="text-sm text-gray-600 capitalize">
+          Company - {interview?.company}
+        </h2>
         <p className="text-xs text-gray-500">
           Created At : <span>{interview?.createdAt}</span>
         </p>
