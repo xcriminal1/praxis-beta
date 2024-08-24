@@ -91,6 +91,8 @@ const AddNewInterview = () => {
         .replace("```json", "")
         .replace("```", "");
 
+      console.log("MockJsonResponse", MockJsonResponse);
+
       const parsedResponse = JSON.parse(MockJsonResponse);
       setJsonResponse(parsedResponse);
 
@@ -156,7 +158,8 @@ const AddNewInterview = () => {
             <DialogDescription>
               <div>
                 <p className="text-slate-900">
-                  Add details about your job position/role, job description, years of experience & compnay of choice.
+                  Add details about your job position/role, job description,
+                  years of experience & compnay of choice.
                 </p>
                 <div className="py-3">
                   <Form {...form}>
@@ -239,7 +242,9 @@ const AddNewInterview = () => {
                                   <SelectItem value="meta">Meta</SelectItem>
                                   <SelectItem value="apple">Apple</SelectItem>
                                   <SelectItem value="amazon">Amazon</SelectItem>
-                                  <SelectItem value="netflix">Netflix</SelectItem>
+                                  <SelectItem value="netflix">
+                                    Netflix
+                                  </SelectItem>
                                 </SelectGroup>
                               </SelectContent>
                             </Select>

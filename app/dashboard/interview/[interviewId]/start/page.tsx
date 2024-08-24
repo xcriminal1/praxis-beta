@@ -30,9 +30,9 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
       .where(eq(MockInterview.mockId, params.interviewId));
 
     const jsonMockResp = JSON.parse(result[0].jsonMockResponse);
-    // console.log(jsonMockResp);
-
-    setMockInterviewQuestion(jsonMockResp);
+    console.log(jsonMockResp?.questions);
+    
+    setMockInterviewQuestion(jsonMockResp?.questions);
     setInterviewData(result[0]);
   };
 
