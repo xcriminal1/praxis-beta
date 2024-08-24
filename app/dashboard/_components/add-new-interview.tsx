@@ -49,6 +49,9 @@ const formSchema = z.object({
     .max(50, {
       message: "Provide your job experience less than 50 years",
     }),
+  company: z.string().min(1, {
+    message: "Provide your company of choice",
+  }),
 });
 
 const AddNewInterview = () => {
@@ -65,6 +68,7 @@ const AddNewInterview = () => {
       jobPosition: "",
       jobDescription: "",
       jobExperience: "",
+      company: "",
     },
   });
 
@@ -196,6 +200,21 @@ const AddNewInterview = () => {
                           <FormItem>
                             <FormLabel className="text-black">
                               Years of Experience
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="5" type="number" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="company"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-black">
+                              Company
                             </FormLabel>
                             <FormControl>
                               <Input placeholder="5" type="number" {...field} />

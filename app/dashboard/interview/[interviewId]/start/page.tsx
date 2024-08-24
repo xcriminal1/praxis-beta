@@ -6,17 +6,8 @@ import React, { useEffect, useState } from "react";
 import { QuestionsSection } from "./_components/QuestionsSection";
 import { WebCam } from "./_components/WebCam";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import {
-  Breadcrumb,
-  BreadcrumbEllipsis,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import BreadcrumbItemWGLobal from "@/app/dashboard/_components/breadcrumb-global";
 
 const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
   const [interviewData, setInterviewData] = useState<any>(null);
