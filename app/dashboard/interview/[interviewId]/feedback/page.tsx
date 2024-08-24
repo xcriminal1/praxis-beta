@@ -30,6 +30,8 @@ const FeedBackPage = ({ params }: { params: { interviewId: string } }) => {
       .where(eq(UserAnswer.mockIdref, params.interviewId))
       .orderBy(UserAnswer.id);
     setFeedbackList(result);
+
+    console.log(result);
   };
 
   const handleRedirectDashboard = () => {
@@ -125,7 +127,7 @@ const FeedBackPage = ({ params }: { params: { interviewId: string } }) => {
                       {item?.correctAnswer}
                     </h2>
                     <h2 className="py-2 px-2 border rounded-lg bg-blue-400/40 text-sm border-blue-700">
-                      <span className="font-bold">Feddback: </span>
+                      <span className="font-bold">Feedback: </span>
                       {item?.feedback}
                     </h2>
                   </div>

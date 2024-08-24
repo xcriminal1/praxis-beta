@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { db } from "@/utils/db";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -25,6 +26,10 @@ export const InterviewItemCard = ({ interview }: { interview: any }) => {
     }, 1400);
   };
 
+  // const handleDeleteInterview = ({ id }: { id: any }) => {
+  //   db.delete(id);
+  // };
+  
   return (
     <div className="border border-gray-400 shadow-sm rounded-lg p-3 flex flex-col gap-2">
       <div>
@@ -48,6 +53,14 @@ export const InterviewItemCard = ({ interview }: { interview: any }) => {
         >
           Feedback
         </Button>
+        {/* <Button
+          size="sm"
+          onClick={() => handleDeleteInterview(interview?.id)}
+          isLoading={loading}
+          loadingText="Loading"
+        >
+          Delete
+        </Button> */}
         <Button
           size="sm"
           isLoading={startLoading}
