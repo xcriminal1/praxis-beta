@@ -61,7 +61,6 @@ Make sure you have the following installed:
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/)
 
 ### Cloning the Repository
 ```
