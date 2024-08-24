@@ -30,16 +30,6 @@ const Header = () => {
       label: "Dashboard",
       href: "/dashboard",
     },
-    {
-      index: 2,
-      label: "Upgrade",
-      href: "/upgrade",
-    },
-    {
-      index: 1,
-      label: "How it works?",
-      href: "/docs",
-    },
   ];
 
   return (
