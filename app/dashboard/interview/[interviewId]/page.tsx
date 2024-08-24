@@ -57,32 +57,13 @@ const InterViewStartPage = ({
   };
 
   return (
-    <div className="flex flex-col pt-5">
-      {/* <div className="pb-4 pt-3">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItemWGLobal label="Dashboard" link="/dashboard" />
-            <BreadcrumbSeparator />
-            <BreadcrumbItemWGLobal
-              label="Generate Question"
-              link={`/dashboard/interview/${params.interviewId}`}
-              active={true}
-            />
-            <BreadcrumbSeparator />
-
-            <BreadcrumbItemWGLobal
-              label="Interview"
-              link={`/dashboard/interview/${interviewData?.mockId}/start`}
-            />
-            <BreadcrumbSeparator />
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div> */}
+    <div className="flex flex-col py-20">
       <h2 className="font-bold text-4xl flex w-full items-center justify-center">
         Let's get started
       </h2>
 
-      <div className="md:flex w-full items-center justify-between px-10 mt-6 hidden">
+       {/* for large screen */}
+      <div className="md:flex w-full items-center justify-between px-10 mt-6 hidden gap-5">
         <div className="bg-gray-500/20 min-h-[60vh] h-full w-[45vw] rounded-lg pt-10 pb-5 flex flex-col gap-4">
           <div className="flex flex-col gap-3 px-10">
             <h2 className="flex gap-1 capitalize truncate">
@@ -98,7 +79,7 @@ const InterViewStartPage = ({
               {interviewData?.jobExperience}
             </h2>
           </div>
-          <div className="px-5">
+          <div className="px-1">
             <Alert className="bg-yellow-300/70 border border-yellow-500">
               <Lightbulb className="h-6 w-6 -mt-1" />
               <AlertTitle className="text-black font-bold pb-2">
@@ -164,10 +145,10 @@ const InterViewStartPage = ({
 
       {/* for small screen */}
 
-      
-      <div className="flex w-full items-center justify-center px-10 py-5 md:hidden">
-        <div className="bg-gray-500/20 min-h-[60vh] h-full w-[45vw] rounded-lg pt-10 pb-5 flex flex-col gap-4">
-          <div className="flex flex-col gap-3">
+
+      <div className="flex flex-col w-full items-center justify-center px-1 py-5 md:hidden">
+        <div className="bg-gray-500/20 h-full w-full rounded-lg pt-10 pb-5 flex flex-col gap-4 px-1">
+          <div className="flex flex-col px-2 gap-3">
             <h2 className="flex gap-1 capitalize truncate">
               <span className="font-bold">Job Role/ Jon Position: </span>
               {interviewData?.jobPosition}
@@ -196,11 +177,12 @@ const InterViewStartPage = ({
               </AlertDescription>
             </Alert>
           </div>
-          <div className="flex items-center justify-end w-full px-5 gap-4">
+          <div className="flex items-center justify-center w-full px-5 gap-2">
             <Button
               onClick={() => handleRedirectDashboard()}
               isLoading={loadingRedirectDashboard}
               loadingText="Redirecting"
+              className="text-xs"
             >
               Back to dashboard
             </Button>
@@ -216,7 +198,7 @@ const InterViewStartPage = ({
         </div>
 
 
-        <div className="my-10 flex flex-col gap-6">
+        <div className="my-10 flex flex-col gap-6 w-full">
           <div className="h-72 w-full rounded-lg border bg-gray-500/20 overflow-hidden flex items-center justify-center">
             {webcamEnabled ? (
               <Webcam

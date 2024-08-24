@@ -6,17 +6,8 @@ import React, { useEffect, useState } from "react";
 import { QuestionsSection } from "./_components/QuestionsSection";
 import { WebCam } from "./_components/WebCam";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import {
-  Breadcrumb,
-  BreadcrumbEllipsis,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import BreadcrumbItemWGLobal from "@/app/dashboard/_components/breadcrumb-global";
 
 const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
   const [interviewData, setInterviewData] = useState<any>(null);
@@ -57,26 +48,6 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
   return (
     mockInterviewQuestion && (
       <div className="flex flex-col gap-3 justify-end w-full pt-4 pb-1">
-        {/* <div className="">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItemWGLobal label="Dashboard" link="/dashboard" />
-              <BreadcrumbSeparator />
-              <BreadcrumbItemWGLobal
-                label="Information"
-                link={`/dashboard/interview/${interviewData?.mockId}`}
-              />
-              <BreadcrumbSeparator />
-
-              <BreadcrumbItemWGLobal
-                label="Interview"
-                link={`/dashboard/interview/${interviewData?.mockId}/start`}
-                active={true}
-              />
-              <BreadcrumbSeparator />
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div> */}
 
         {/* Question */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
