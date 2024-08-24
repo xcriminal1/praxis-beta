@@ -6,17 +6,8 @@ import React, { useEffect, useState } from "react";
 import { QuestionsSection } from "./_components/QuestionsSection";
 import { WebCam } from "./_components/WebCam";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import {
-  Breadcrumb,
-  BreadcrumbEllipsis,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import BreadcrumbItemWGLobal from "@/app/dashboard/_components/breadcrumb-global";
 
 const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
   const [interviewData, setInterviewData] = useState<any>(null);
@@ -45,7 +36,7 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
     setInterviewData(result[0]);
   };
 
-  const handleRedirectStasrtPage = () => {
+  const handleRedirectStartPage = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -62,7 +53,10 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
       }
     };
 
-    if (window.location.pathname === `/dashboard/interview/${params.interviewId}/start`) {
+    if (
+      window.location.pathname ===
+      `/dashboard/interview/${params.interviewId}/start`
+    ) {
       document.addEventListener("keydown", handleEsc);
     }
 
@@ -74,7 +68,6 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
   return (
     mockInterviewQuestion && (
       <div className="flex flex-col gap-3 justify-end w-full pt-4 pb-1">
-        {/* Question */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <QuestionsSection
             mockInterviewQuestion={mockInterviewQuestion}
@@ -111,7 +104,7 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
               )}
               {activeQuestionIndex == mockInterviewQuestion?.length - 1 && (
                 <Button
-                  onClick={handleRedirectStasrtPage}
+                  onClick={handleRedirectStartPage}
                   isLoading={loading}
                   loadingText="Redirecting"
                 >
