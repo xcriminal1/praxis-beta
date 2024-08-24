@@ -123,17 +123,37 @@ export const QuestionsSection = ({
         });
 
         if (resp) {
-          toast("Answer recorded successfully");
+          toast("Answer recorded successfully", {
+            action: {
+              label: "Okay",
+              onClick: () => toast.dismiss(),
+            },
+          });
           setResults([]);
           clearUserData();
         } else {
-          toast("Something went wrong while saving");
+          toast("Something went wrong while saving", {
+            action: {
+              label: "Okay",
+              onClick: () => toast.dismiss(),
+            },
+          });
         }
       } else {
-        toast("Error while fetching user data");
+        toast("Error while fetching user data", {
+          action: {
+            label: "Okay",
+            onClick: () => toast.dismiss(),
+          },
+        });
       }
     } catch (error) {
-      toast("Something went wrong while saving");
+      toast("Something went wrong while saving", {
+        action: {
+          label: "Okay",
+          onClick: () => toast.dismiss(),
+        },
+      });
     }
     setResults([]);
     setLoading(false);

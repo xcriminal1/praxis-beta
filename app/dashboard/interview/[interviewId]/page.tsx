@@ -49,13 +49,23 @@ const InterViewStartPage = ({
       setTimeout(() => {
         setLoading(false);
         router.push(`/dashboard/interview/${params.interviewId}/start`);
-        toast("Interview Started 🔥");
+        toast("Interview Started 🔥", {
+          action: {
+            label: "Okay",
+            onClick: () => toast.dismiss(),
+          },
+        });
       }, 800);
     }
 
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        toast("Interview stopped");
+        toast("Interview stopped", {
+          action: {
+            label: "Okay",
+            onClick: () => toast.dismiss(),
+          },
+        });
         router.push(`/dashboard`);
         if (document.fullscreenElement) {
           document.exitFullscreen();
@@ -81,12 +91,11 @@ const InterViewStartPage = ({
 
   return (
     <div className="flex flex-col py-20">
-
       <h2 className="font-bold text-4xl flex w-full items-center justify-center">
         Let's get started
       </h2>
 
-       {/* for large screen */}
+      {/* for large screen */}
       <div className="md:flex w-full items-center justify-between px-10 mt-6 hidden gap-5">
         <div className="bg-gray-500/20 min-h-[60vh] h-full w-[45vw] rounded-lg pt-10 pb-5 flex flex-col gap-4">
           <div className="flex flex-col gap-3 px-10">
@@ -167,7 +176,6 @@ const InterViewStartPage = ({
       </div>
 
       {/* for small screen */}
-
 
       <div className="flex flex-col w-full items-center justify-center px-1 py-5 md:hidden">
         <div className="bg-gray-500/20 h-full w-full rounded-lg pt-10 pb-5 flex flex-col gap-4 px-1">

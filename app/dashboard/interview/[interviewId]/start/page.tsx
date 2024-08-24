@@ -41,7 +41,12 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
     setTimeout(() => {
       setLoading(false);
       router.push(`/dashboard/interview/${interviewData?.mockId}/feedback`);
-      toast("Checkout Feedback 🥳");
+      toast("Checkout Feedback 🥳", {
+        action: {
+          label: "Okay",
+          onClick: () => toast.dismiss(),
+        },
+      });
     }, 1700);
   };
 
@@ -49,7 +54,12 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault(); // Prevent the default action of the ESC key
-        toast("ESC key is disabled on this page");
+        toast("ESC key is disabled on this page", {
+          action: {
+            label: "Okay",
+            onClick: () => toast.dismiss(),
+          },
+        });
       }
     };
 
