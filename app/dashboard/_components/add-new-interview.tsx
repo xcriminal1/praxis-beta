@@ -83,20 +83,30 @@ const AddNewInterview = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
     const InputPrompt = InputPromptsFormat(values);
-
+  
     try {
       const result = await chatSession.sendMessage(InputPrompt);
-      const MockJsonResponse = result.response
+      let MockJsonResponse = result.response
         .text()
         .replace("```json", "")
-        .replace("```", "");
-
+        .replace("```", "")
+        .trim();
+  
       console.log("MockJsonResponse", MockJsonResponse);
-
-      const parsedResponse = JSON.parse(MockJsonResponse);
+  
+      let parsedResponse;
+      try {
+        parsedResponse = JSON.parse(MockJsonResponse);
+      } catch (parseError) {
+        console.error("JSON Parse Error", parseError);
+        toast("Failed to parse JSON response from AI");
+        setLoading(false);
+        return;
+      }
+  
       setJsonResponse(parsedResponse);
-
-      if (MockJsonResponse) {
+  
+      if (parsedResponse) {
         try {
           const response = await db
             .insert(MockInterview)
@@ -111,7 +121,7 @@ const AddNewInterview = () => {
               createdAt: moment().format("DD-MM-YYYY"),
             })
             .returning({ mockId: MockInterview.mockId });
-
+  
           if (response) {
             setOpenDialog(false);
             router.push(`/dashboard/interview/${response[0]?.mockId}`);
@@ -128,7 +138,7 @@ const AddNewInterview = () => {
       } else {
         toast("Failed to generate from Json Data");
       }
-
+  
       setLoading(false);
     } catch (aiError: any) {
       console.error("Error while generating from AI", aiError);
@@ -136,6 +146,7 @@ const AddNewInterview = () => {
       setLoading(false);
     }
   }
+  
 
   return (
     <div>
