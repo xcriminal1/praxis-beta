@@ -4,22 +4,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="px-10 pt-10 flex flex-col justify-center">
-      {/* <div className="absolute top-16 right-6">
-     
-          </div> */}
-      <div className="min-h-[70vh] flex items-center justify-between gap-18">
-        <div className="w-[65%] h-[75vh] pl-8 pt-6">
+    <main className="px-10 pt-3 md:pt-10 flex flex-col justify-center">
+      <div className="h-full md:min-h-[70vh] flex  flex-col md:flex-row items-center justify-between gap-18">
+        <div className="w-full md:w-[65%] h-full md:h-[75vh]  pl-8 pt-2 md:pt-6">
           <BoxRevealDemo />
         </div>
-        <div className="w-[60%] h-[60vh] flex items-center justify-center pt-6">
-          {/* <Image
-            src="/flygirl-unscreen.gif"
-            alt="illustration"
-            width={1600}
-            height={1600}
-            className="bg-transparent"
-          /> */}
+        <div className="w-full md:w-[60%] h-full md:h-[60vh] items-center justify-center pt-6 hidden md:flex">
           <SortableListDemo />
         </div>
       </div>

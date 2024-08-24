@@ -26,13 +26,13 @@ const BoxRevealDemo = () => {
           <h1
             className={cn(
               GeistMono.variable,
-              "font-mono text-7xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#784fe0] to-[#000] bg-clip-text text-center  leading-none tracking-tighter text-transparent select-none mb-3"
+              "font-mono text-3xl md:text-7xl font-bold pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#784fe0] to-[#000] bg-clip-text text-center  leading-none tracking-tighter text-transparent select-none mb-3"
             )}
           >
             Praxis AI
           </h1>
           <svg
-            className="-mt-3 hover:rotate-180 transition-transform duration-500 ease-in-out cursor-pointer"
+            className="-mt-3 w-[40px] hover:rotate-180 transition-transform duration-500 ease-in-out cursor-pointer"
             width="80"
             height="80"
             viewBox="0 0 200 200"
