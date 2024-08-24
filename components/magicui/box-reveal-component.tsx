@@ -21,8 +21,7 @@ const BoxRevealDemo = () => {
   return (
     <div className="h-full w-full max-w-[38rem] items-center justify-center overflow-hidden pt-8">
       <BoxReveal boxColor={"transparent"} duration={0.5}>
-        <div className="flex items-center justify-between gap-8 pt-4 py-2 pr-3">
-    
+        <div className="flex items-center justify-between gap-8 pt-4 pr-3">
           <h1
             className={cn(
               GeistMono.variable,
