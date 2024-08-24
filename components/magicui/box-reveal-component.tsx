@@ -60,8 +60,8 @@ const BoxRevealDemo = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 {" "}
-                <stop stop-color="#784fe0" />{" "}
-                <stop offset="1" stop-color="##000" />{" "}
+                <stop stopColor="#784fe0" />{" "}
+                <stop offset="1" stopColor="##000" />{" "}
               </linearGradient>{" "}
               <clipPath id="clip0_234_943">
                 {" "}
