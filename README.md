@@ -1,7 +1,7 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/lEflo_sc82g?feature=shared" target="_blank">
-      <img src="https://github.com/adrianhajdin/healthcare/assets/151519281/a7dd73b6-93de-484d-84e0-e7f4e299167b" alt="Project Banner">
+    <a href="#" target="_blank">
+      <img src="https://utfs.io/f/3db27ba7-05e6-499e-b1ba-005743a69fcd-prjuoy.png" alt="Project Banner">
     </a>
   <br />
 
@@ -9,122 +9,76 @@
     <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
     <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
-    <img src="https://img.shields.io/badge/-Appwrite-black?style=for-the-badge&logoColor=white&logo=appwrite&color=FD366E" alt="appwrite" />
+    <img src="https://img.shields.io/badge/-Drizzle-black?style=for-the-badge&logoColor=white&logo=drizzle" alt="drizzle" />
+    <img src="https://img.shields.io/badge/-Postgres-black?style=for-the-badge&logoColor=white&logo=postgresql&color=336791" alt="postgres" />
   </div>
 
-  <h3 align="center">A HealthCare Management System</h3>
+  <h3 align="center">Praxis - AI Generated Mock Interview Platform</h3>
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
+  <div align="center">
+    Praxis is an AI-generated mock interview platform that offers video and voice recording features. The AI analyzes your responses and provides feedback after the interview.
+  </div>
 </div>
 
-## 📋 <a name="table">Table of Contents</a>
+## 📋 Table of Contents
 
 1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
+2. ⚙ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Snippets (Code to Copy)](#snippets)
-6. 🔗 [Assets](#links)
-7. 🚀 [More](#more)
+5. 🗝 [Environment Variables](#environment-variables)
 
-## 🚨 Tutorial
+## 🤖 Introduction
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+Praxis is a cutting-edge AI-driven platform designed to simulate real interview scenarios. It allows users to record their video and voice responses during a mock interview, which is then analyzed by AI to provide detailed feedback and suggestions for improvement.
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+## ⚙ Tech Stack
 
-<a href="https://youtu.be/lEflo_sc82g?feature=shared" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+- *Next.js*
+- *TypeScript*
+- *Tailwind CSS*
+- *Drizzle*
+- *Postgres*
+- *ShadCN*
 
-## <a name="introduction">🤖 Introduction</a>
+## 🔋 Features
 
-A healthcare patient management application that allows patients to easily register, book, and manage their appointments with doctors, featuring administrative tools for scheduling, confirming, and canceling appointments, along with SMS notifications, all built using Next.js.
+👉 *AI-Powered Mock Interviews*: Simulate real interview scenarios with AI-driven feedback.
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **34k+** members. It's a place where people help each other out.
+👉 *Video & Voice Recording*: Record responses for analysis by the AI.
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+👉 *Detailed Feedback*: Receive constructive feedback after each interview session.
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+👉 *Complete Responsiveness*: Fully responsive design suitable for all devices.
 
-- Next.js
-- Appwrite
-- Typescript
-- TailwindCSS
-- ShadCN
-- Twilio
+## 🤸 Quick Start
 
-## <a name="features">🔋 Features</a>
+Follow these steps to set up and run the project locally:
 
-👉 **Register as a Patient**: Users can sign up and create a personal profile as a patient.
+### Prerequisites
 
-👉 **Book a New Appointment with Doctor**: Patients can schedule appointments with doctors at their convenience and can book multiple appointments.
-
-👉 **Manage Appointments on Admin Side**: Administrators can efficiently view and handle all scheduled appointments.
-
-👉 **Confirm/Schedule Appointment from Admin Side**: Admins can confirm and set appointment times to ensure they are properly scheduled.
-
-👉 **Cancel Appointment from Admin Side**: Administrators have the ability to cancel any appointment as needed.
-
-👉 **Send SMS on Appointment Confirmation**: Patients receive SMS notifications to confirm their appointment details.
-
-👉 **Complete Responsiveness**: The application works seamlessly on all device types and screen sizes.
-
-👉 **File Upload Using Appwrite Storage**: Users can upload and store files securely within the app using Appwrite storage services.
-
-👉 **Manage and Track Application Performance Using Sentry**: The application uses Sentry to monitor and track its performance and detect any errors.
-
-and many more, including code architecture and reusability
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
+Make sure you have the following installed:
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
+- [npm](https://www.npmjs.com/)
 
-**Cloning the Repository**
-
-```bash
-git clone https://github.com/adrianhajdin/healthcare.git
-cd healthcare
+### Cloning the Repository
 ```
-
-**Installation**
-
-Install the project dependencies using npm:
-
-```bash
-npm install
+bash
+git clone https://github.com/exionstech/status_code_one.git
+cd status_code_one
 ```
+*Set Up Environment Variables*
 
-**Set Up Environment Variables**
-
-Create a new file named `.env.local` in the root of your project and add the following content:
-
-```env
-#APPWRITE
-NEXT_PUBLIC_ENDPOINT=https://cloud.appwrite.io/v1
-PROJECT_ID=
-API_KEY=
-DATABASE_ID=
-PATIENT_COLLECTION_ID=
-APPOINTMENT_COLLECTION_ID=
-NEXT_PUBLIC_BUCKET_ID=
-
-NEXT_PUBLIC_ADMIN_PASSKEY=111111
+Create a new file named .env.local in the root of your project and add the following content:
 ```
-
-Replace the placeholder values with your actual Appwrite credentials. You can obtain these credentials by signing up on the [Appwrite website](https://appwrite.io/).
-
-**Running the Project**
-
-```bash
-npm run dev
+env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_DRIZZLE_DATABASE_URL=
+NEXT_PUBLIC_GEMINI_API_KEY=
+NEXT_PUBLIC_MAX_QUESTION_COUNT=
 ```
-

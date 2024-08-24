@@ -86,52 +86,53 @@ const AddNewInterview = () => {
 
     try {
       const result = await chatSession.sendMessage(InputPrompt);
-      const MockJsonResponse = result.response
-        .text()
-        .replace("```json", "")
-        .replace("```", "");
+      let MockJsonResponse = result.response.text();
 
-      console.log("MockJsonResponse", MockJsonResponse);
+      MockJsonResponse = MockJsonResponse.replace(/```json|```/g, "").trim();
 
-      const parsedResponse = JSON.parse(MockJsonResponse);
-      setJsonResponse(parsedResponse);
+      console.log("MockJsonResponse:", MockJsonResponse);
 
-      if (MockJsonResponse) {
-        try {
-          const response = await db
-            .insert(MockInterview)
-            .values({
-              mockId: uuid(),
-              jsonMockResponse: MockJsonResponse,
-              jobPosition: values.jobPosition,
-              jobDescription: values.jobDescription,
-              jobExperience: values.jobExperience,
-              company: values.company,
-              createdBy: user?.primaryEmailAddress?.emailAddress || "unknown",
-              createdAt: moment().format("DD-MM-YYYY"),
-            })
-            .returning({ mockId: MockInterview.mockId });
+      let parsedResponse;
+      try {
+        parsedResponse = JSON.parse(MockJsonResponse);
+        setJsonResponse(parsedResponse);
+      } catch (parseError) {
+        console.error("Failed to parse AI response:", parseError);
+        toast("Failed to generate from AI - Invalid JSON format");
+        setLoading(false);
+        return;
+      }
 
-          if (response) {
-            setOpenDialog(false);
-            router.push(`/dashboard/interview/${response[0]?.mockId}`);
-            toast("Interview created ✨");
-            setOpenDialog(false);
-          } else {
-            setOpenDialog(false);
-            toast("Failed to create Interview, try again");
-          }
-        } catch (dbError: any) {
-          console.error("Error while storing in the database", dbError);
-          toast("Failed to store in the database");
+      try {
+        const response = await db
+          .insert(MockInterview)
+          .values({
+            mockId: uuid(),
+            jsonMockResponse: MockJsonResponse,
+            jobPosition: values.jobPosition,
+            jobDescription: values.jobDescription,
+            jobExperience: values.jobExperience,
+            company: values.company,
+            createdBy: user?.primaryEmailAddress?.emailAddress || "unknown",
+            createdAt: moment().format("DD-MM-YYYY"),
+          })
+          .returning({ mockId: MockInterview.mockId });
+
+        if (response) {
+          setOpenDialog(false);
+          router.push(`/dashboard/interview/${response[0]?.mockId}`);
+          toast("Interview created ✨");
+        } else {
+          toast("Failed to create Interview, try again");
         }
-      } else {
-        toast("Failed to generate from Json Data");
+      } catch (dbError: any) {
+        console.error("Error while storing in the database", dbError);
+        toast("Failed to store in the database");
       }
 
       setLoading(false);
     } catch (aiError: any) {
-      console.error("Error while generating from AI", aiError);
+      console.error("Error while generating from AI:", aiError);
       toast("Failed to generate from AI");
       setLoading(false);
     }
