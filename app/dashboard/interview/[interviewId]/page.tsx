@@ -41,13 +41,36 @@ const InterViewStartPage = ({
   };
 
   const handleRedirectStartPage = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      router.push(`/dashboard/interview/${params.interviewId}/start`);
-      toast("Interview Started 🔥");
-    }, 1400);
+    const prompt = confirm("Don't click ESC else interview will stop")
+
+    if (document.documentElement.requestFullscreen && prompt) {
+      document.documentElement.requestFullscreen();
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        router.push(`/dashboard/interview/${params.interviewId}/start`);
+        toast("Interview Started 🔥");
+      }, 800);
+    }
+
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        toast("Interview stopped");
+        router.push(`/dashboard`);
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleEsc);
+
+    // Clean up the event listener when the component is unmounted or the interview is stopped
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
+    };
   };
+
   const handleRedirectDashboard = () => {
     setLoadingRedirectDashboard(true);
     setTimeout(() => {
@@ -56,8 +79,12 @@ const InterViewStartPage = ({
     }, 1400);
   };
 
+  const handlePage = () => {
+  }
+
   return (
     <div className="flex flex-col py-20">
+
       <h2 className="font-bold text-4xl flex w-full items-center justify-center">
         Let's get started
       </h2>
@@ -104,7 +131,10 @@ const InterViewStartPage = ({
             </Button>
             <Button
               variant="shine"
-              onClick={() => handleRedirectStartPage()}
+              onClick={() => {
+                handleRedirectStartPage();
+                handlePage()
+              }}
               isLoading={loading}
               loadingText="Starting Interview"
             >
