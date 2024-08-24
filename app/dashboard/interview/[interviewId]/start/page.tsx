@@ -54,30 +54,26 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
     }, 1700);
   };
 
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault(); // Prevent the default action of the ESC key
+        toast("ESC key is disabled on this page");
+      }
+    };
+
+    if (window.location.pathname === `/dashboard/interview/${params.interviewId}/start`) {
+      document.addEventListener("keydown", handleEsc);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, [params.interviewId]);
+
   return (
     mockInterviewQuestion && (
       <div className="flex flex-col gap-3 justify-end w-full pt-4 pb-1">
-        {/* <div className="">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItemWGLobal label="Dashboard" link="/dashboard" />
-              <BreadcrumbSeparator />
-              <BreadcrumbItemWGLobal
-                label="Information"
-                link={`/dashboard/interview/${interviewData?.mockId}`}
-              />
-              <BreadcrumbSeparator />
-
-              <BreadcrumbItemWGLobal
-                label="Interview"
-                link={`/dashboard/interview/${interviewData?.mockId}/start`}
-                active={true}
-              />
-              <BreadcrumbSeparator />
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div> */}
-
         {/* Question */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <QuestionsSection
