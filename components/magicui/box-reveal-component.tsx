@@ -32,7 +32,7 @@ const BoxRevealDemo = () => {
             Praxis AI
           </h1>
           <svg
-            className="-mt-3 w-[40px] hover:rotate-180 transition-transform duration-500 ease-in-out cursor-pointer"
+            className="-mt-3 hover:rotate-180 transition-transform duration-500 ease-in-out cursor-pointer"
             width="80"
             height="80"
             viewBox="0 0 200 200"
