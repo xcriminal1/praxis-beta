@@ -33,6 +33,14 @@ import { db } from "@/utils/db";
 import { MockInterview } from "@/utils/schema";
 import moment from "moment";
 import { useUser } from "@clerk/nextjs";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const formSchema = z.object({
   jobPosition: z.string().min(1, {
@@ -96,6 +104,7 @@ const AddNewInterview = () => {
               jobPosition: values.jobPosition,
               jobDescription: values.jobDescription,
               jobExperience: values.jobExperience,
+              company: values.company,
               createdBy: user?.primaryEmailAddress?.emailAddress || "unknown",
               createdAt: moment().format("DD-MM-YYYY"),
             })
@@ -147,8 +156,7 @@ const AddNewInterview = () => {
             <DialogDescription>
               <div>
                 <p className="text-slate-900">
-                  Add details about your job position/role, job description, and
-                  years of experience.
+                  Add details about your job position/role, job description, years of experience & compnay of choice.
                 </p>
                 <div className="py-3">
                   <Form {...form}>
@@ -216,9 +224,25 @@ const AddNewInterview = () => {
                             <FormLabel className="text-black">
                               Company
                             </FormLabel>
-                            <FormControl>
-                              <Input placeholder="5" type="number" {...field} />
-                            </FormControl>
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <FormControl>
+                                <SelectTrigger className="w-[280px]">
+                                  <SelectValue placeholder="Select a company of choice" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="google">Google</SelectItem>
+                                  <SelectItem value="meta">Meta</SelectItem>
+                                  <SelectItem value="apple">Apple</SelectItem>
+                                  <SelectItem value="amazon">Amazon</SelectItem>
+                                  <SelectItem value="netflix">Netflix</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
                             <FormMessage />
                           </FormItem>
                         )}

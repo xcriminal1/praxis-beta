@@ -6,6 +6,7 @@ export const MockInterview = pgTable("mockInterview", {
   jobPosition: varchar("jobPosition").notNull(),
   jobDescription: varchar("jobDescription").notNull(),
   jobExperience: varchar("jobExperience").notNull(),
+  company: varchar("company").notNull(),
   createdBy: varchar("createdBy").notNull(),
   createdAt: varchar("createdAt"),
   mockId: varchar("mockId").notNull(),

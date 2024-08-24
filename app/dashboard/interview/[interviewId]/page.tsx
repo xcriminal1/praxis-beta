@@ -41,7 +41,7 @@ const InterViewStartPage = ({
   };
 
   const handleRedirectStartPage = () => {
-    const prompt = confirm("Don't click ESC else interview will stop")
+    const prompt = confirm("Don't click ESC else interview will stop");
 
     if (document.documentElement.requestFullscreen && prompt) {
       document.documentElement.requestFullscreen();
@@ -78,9 +78,6 @@ const InterViewStartPage = ({
       router.push(`/dashboard`);
     }, 1400);
   };
-
-  const handlePage = () => {
-  }
 
   return (
     <div className="flex flex-col  pt-5">
@@ -131,7 +128,6 @@ const InterViewStartPage = ({
               variant="shine"
               onClick={() => {
                 handleRedirectStartPage();
-                handlePage()
               }}
               isLoading={loading}
               loadingText="Starting Interview"
@@ -141,7 +137,6 @@ const InterViewStartPage = ({
           </div>
         </div>
 
-        
         <div className="my-10 flex flex-col gap-6">
           <div className="h-72 w-full rounded-lg border bg-gray-500/20 overflow-hidden flex items-center justify-center">
             {webcamEnabled ? (
@@ -169,11 +164,8 @@ const InterViewStartPage = ({
         </div>
       </div>
 
-
-
       {/* for small screen */}
 
-      
       <div className="flex w-full items-center justify-center px-10 py-5 md:hidden">
         <div className="bg-gray-500/20 min-h-[60vh] h-full w-[45vw] rounded-lg pt-10 pb-5 flex flex-col gap-4">
           <div className="flex flex-col gap-3">
@@ -223,7 +215,6 @@ const InterViewStartPage = ({
             </Button>
           </div>
         </div>
-
 
         <div className="my-10 flex flex-col gap-6">
           <div className="h-72 w-full rounded-lg border bg-gray-500/20 overflow-hidden flex items-center justify-center">

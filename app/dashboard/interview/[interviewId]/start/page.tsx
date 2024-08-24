@@ -36,7 +36,7 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
     setInterviewData(result[0]);
   };
 
-  const handleRedirectStasrtPage = () => {
+  const handleRedirectStartPage = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -53,7 +53,10 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
       }
     };
 
-    if (window.location.pathname === `/dashboard/interview/${params.interviewId}/start`) {
+    if (
+      window.location.pathname ===
+      `/dashboard/interview/${params.interviewId}/start`
+    ) {
       document.addEventListener("keydown", handleEsc);
     }
 
@@ -102,7 +105,7 @@ const InterviewQuestion = ({ params }: { params: { interviewId: string } }) => {
               )}
               {activeQuestionIndex == mockInterviewQuestion?.length - 1 && (
                 <Button
-                  onClick={handleRedirectStasrtPage}
+                  onClick={handleRedirectStartPage}
                   isLoading={loading}
                   loadingText="Redirecting"
                 >
