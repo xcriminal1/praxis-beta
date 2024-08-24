@@ -66,7 +66,7 @@ const FeedBackPage = ({ params }: { params: { interviewId: string } }) => {
             Here is your interview feedback
           </p>
 
-          <p
+          {/* <p
             className={cn(
               "text-primary text-lg my-1 flex items-center justify-start gap-1"
             )}
@@ -75,7 +75,7 @@ const FeedBackPage = ({ params }: { params: { interviewId: string } }) => {
               <Sparkles className="size-5 fill-yellow-500 text-yellow-600" />
             </span>
             Your overall interview rating: <span>7/10</span>
-          </p>
+          </p> */}
 
           <p className="text-sm text-muted-foreground">
             Find below interview question with correct answer, your answer and
