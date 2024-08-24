@@ -37,9 +37,9 @@ Praxis is a cutting-edge AI-driven platform designed to simulate real interview 
 - *Next.js*
 - *TypeScript*
 - *Tailwind CSS*
-- *Drizzle*
-- *Postgres*
-- *ShadCN*
+- *Drizzle Orm*
+- *Neon DB*
+- *Shadcn UI*
 
 ## 🔋 Features
 
