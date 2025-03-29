@@ -65,8 +65,8 @@ Make sure you have the following installed:
 ### Cloning the Repository
 ```
 bash
-git clone https://github.com/exionstech/status_code_one.git
-cd status_code_one
+git clone https://github.com/xcriminal1/praxis-beta
+cd praxis-beta
 ```
 *Set Up Environment Variables*
 
